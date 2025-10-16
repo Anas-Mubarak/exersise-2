@@ -1,11 +1,15 @@
 function findLongest(sentence)
 {
-    let largest = ''
+    let largest = ['']
     for(let word of sentence.split(' '))
     {
-        if(word.length>largest.length)
+        if(word.length>largest[0].length)
         {
-            largest = word
+            largest = [word]
+        }
+        else if(word.length==largest[0].length)
+        {
+            largest.push(word)
         }
     }
     return largest
